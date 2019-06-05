@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class Attraction < ApplicationRecord
+class Planet < ApplicationRecord
   belongs_to :faction
 end
