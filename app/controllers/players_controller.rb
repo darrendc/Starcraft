@@ -13,17 +13,23 @@ class PlayersController < ApplicationController
     @player = Player.find_by_id(params[:id])
   end
 
-  def create
-    @player = Player.new(player_params)
-
-    respond_to do |format|
-    if player.save
-      format.html { redirect_to players_url, notice: 'User was successfully created.' }
-      format.json { render action: 'show', status: :created, location: @player }
-    else
-      format.html { render aciton: 'new' }
-      format.json {rnder json: @players.error, status: unprocessable_entity}
+   def create
+    if params[:password] == params[:password_confirmation]
+      @player = Player.create(player_params)
+      if @player.save
+        session[:player_id] = @player.id
+        redirect_to player_path(@player)
+      else
+        redirect_to new_player_path
       end
+    else
+      redirect_to new_player_path
     end
+  end
+
+private
+
+  def player_params
+    params.require(:player).permit(:name, :password, :password_confirmation)
   end
 end
