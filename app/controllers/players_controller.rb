@@ -12,4 +12,18 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find_by_id(params[:id])
   end
+
+  def create
+    @player = Player.new(player_params)
+
+    respond_to do |format|
+    if player.save
+      format.html { redirect_to players_url, notice: 'User was successfully created.' }
+      format.json { render action: 'show', status: :created, location: @player }
+    else
+      format.html { render aciton: 'new' }
+      format.json {rnder json: @players.error, status: unprocessable_entity}
+      end
+    end
+  end
 end

@@ -1,13 +1,9 @@
-<h1>Create a new player</h1>
+<h1>Create a Player Account</h1>
 
 <%= form_for @player do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %></br>
-  <%= f.label :gold %>
-  <%= f.text_field :gold %></br>
-  <%= f.label :strenth %>
-  <%= f.text_field :strength %></br>
-  <%= f.label :skill %>
-  <%= f.text_field :skill %></br>
-  <%= f.submit "Create Player" %>
+  <%= f.label :password %>
+  <%= f.text_field :password %></br>
+  <%= f.submit "Create" %>
 <% end %>

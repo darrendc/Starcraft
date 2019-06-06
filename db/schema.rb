@@ -15,25 +15,22 @@ ActiveRecord::Schema.define(version: 2019_06_05_140506) do
   create_table "characters", force: :cascade do |t|
     t.integer "player_id"
     t.integer "faction_id"
+    t.string "name"
   end
 
   create_table "factions", force: :cascade do |t|
     t.string "name"
-    t.integer "gold"
-    t.integer "strength_rating"
-    t.integer "min_skill"
+    t.text "description"
   end
 
   create_table "planets", force: :cascade do |t|
     t.string "name"
+    t.integer "faction_id"
   end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
-    t.integer "gold"
-    t.integer "strength"
-    t.integer "skill"
   end
 
 end
