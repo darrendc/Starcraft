@@ -1,0 +1,14 @@
+<h1>Login</h1>
+
+<%= form_for @player, url: sessions_path(@player) do |f| %>
+  <%= f.label "Select Player" %>
+  <%#= f.collection_select(:name, Player.all, :id, :name, include_blank: :true) %></br>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :password %>
+  <%= f.text_field :password, id: :password %></br>
+  <%= f.submit "Login" %>
+<% end %></br>
+
+<%= link_to "Signup", new_player_path %></br>
+<%= link_to "<-Back Home", root_path %>

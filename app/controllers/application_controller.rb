@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     session[:player_id]
   end
+
+  def current_player
+    Player.find(session[:player_id])
+  end
 end

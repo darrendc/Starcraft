@@ -1,4 +1,4 @@
-<h1>Create a Player Account</h1>
+<h1>Signup</h1>
 
 <%= form_for @player do |f| %>
   <%= f.label :name %>
@@ -7,3 +7,6 @@
   <%= f.text_field :password %></br>
   <%= f.submit "Create Player" %>
 <% end %>
+</br>
+<%= link_to "Login", new_session_path %></br>
+<%= link_to "<- Back Home", root_path %>

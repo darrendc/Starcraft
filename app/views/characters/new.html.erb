@@ -3,5 +3,8 @@
 <%= form_for @character do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %></br>
+  <p>Select Faction:</p>
+  <%= f.collection_select(:faction_id, Faction.all, :id, :name, include_blank: true) %>
   <%= f.submit "Create Character" %>
 <% end %>
+

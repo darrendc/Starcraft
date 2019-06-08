@@ -10,12 +10,13 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @player = Player.find_by_id(params[:id])
+    @player = Player.find(params[:id])
   end
 
-   def create
+# Model.create == Model.new.save
+   def create # Signup
     if params[:password] == params[:password_confirmation]
-      @player = Player.create(player_params)
+      @player = Player.new(player_params)
       if @player.save
         session[:player_id] = @player.id
         redirect_to player_path(@player)
