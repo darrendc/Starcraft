@@ -1,5 +1,5 @@
 <h1>Player Dashboard for <%= @player.name %></h1>
-<p><%= link_to "Logout", root_path, method: :delete %></p>
+<p><%= link_to "Logout", session_path, method: :delete %></p>
 <%= link_to "Create New Hero", new_character_path %>
-<p><%= @player.name %>'s Existing Hero(s):</p>
+<p><%= @player.name %>'s Hero(s) list:</p>
 
