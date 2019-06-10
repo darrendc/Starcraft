@@ -1,11 +1,12 @@
 <h1>Player Dashboard for <%= @player.name %></h1>
 <p><%= link_to "Logout", session_path, method: :delete %></p>
+<%= link_to "See Factions", faction_path(@player) %><br>
 <%= link_to "Create New Hero", new_character_path %>
-<p><%= @player.name %>'s Hero(s) list:</p>
 
+<p><u><%= @player.name %>'s Hero(s) list:</u></p>
 <% @player.characters.each do |char| %>
-<p>
+  <p>
   Name: <%= char.name %></br>
-  Faction: <%= char.faction.name %></br>
-</p>
+  Faction: <%= char.faction.name %><br>
+  </p>
 <% end %>
