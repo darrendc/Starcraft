@@ -4,9 +4,11 @@
   <%= f.label :name %>:
   <%= f.text_field :name %>
   <%= f.label :password %>:
-  <%= f.text_field :password %></br>
+  <%= f.text_field :password %>
+  <br>
   <%= f.submit "Create Player" %>
 <% end %>
-</br>
-<%= link_to "Login", new_session_path %></br>
+<br>
+<%= link_to "Login", new_session_path %>
+<br>
 <%= link_to "<- Back Home", root_path %>

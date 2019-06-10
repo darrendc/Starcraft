@@ -5,10 +5,6 @@ class CharactersController < ApplicationController
     @character = Character.new
   end
 
-  def index
-    @characters = Character.all
-  end
-
   def create #create character
     character = Character.new(character_params)
       character.player_id = session[:player_id]

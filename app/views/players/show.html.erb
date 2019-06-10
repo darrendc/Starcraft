@@ -6,7 +6,7 @@
 <p><u><%= @player.name %>'s Hero(s) list:</u></p>
 <% @player.characters.each do |char| %>
   <p>
-  Name: <%= char.name %></br>
-  Faction: <%= char.faction.name %><br>
+    Name: <%= char.name %></br>
+    Faction: <%= char.faction.name %><br>
   </p>
 <% end %>
