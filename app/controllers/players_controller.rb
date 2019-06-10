@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PlayersController < ApplicationController
+  before_action :authorize, only: [:index, :show]
+
   def new
     @player = Player.new
   end

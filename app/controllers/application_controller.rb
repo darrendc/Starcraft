@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
   def current_player
     Player.find(session[:player_id])
   end
+
+  def authorize
+    if logged_in?
+      # do nothing, we are good!
+    else
+      redirect_to new_session_path
+    end
+  end
 end

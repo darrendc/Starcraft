@@ -9,14 +9,19 @@ class CharactersController < ApplicationController
     @characters = Character.all
   end
 
-  def create
-    character = Character.create(character_params)
-    redirect_to character_path(character)
+  def create #create character
+    character = Character.new(character_params)
+    character.player_id = session[:player_id]
+    if character.save
+      redirect_to player_path(character.player)
+    else
+      redirect_to "/characters/new"
+    end
   end
 
 private
 
-  def character_parmas
-    params.require(:character).permit(:player_id, :faction_id, :name)
+  def character_params
+    params.require(:character).permit(:faction_id, :name)
   end
 end
