@@ -3,6 +3,7 @@
 class CharactersController < ApplicationController
   def new
     @character = Character.new
+    @player = current_player
   end
 
   def create #create character

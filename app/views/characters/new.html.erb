@@ -7,5 +7,8 @@
   <%= f.collection_select(:faction_id, Faction.all, :id, :name, include_blank: true) %>
   <%= f.submit "Create Character" %>
 <% end %>
+<br>
+<%= link_to "<- Back to Player Dashboard", player_path(@player) %>
 </br>
+
 

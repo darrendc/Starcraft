@@ -1,8 +1,10 @@
 <h1>Create a Planet</h1>
 
-<%= form_for @planet do |f| %>
+<%= form_for @planet, url: faction_planets_path(@faction, @planet) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %></br>
   <%= f.submit "Create Planet" %>
 <% end %>
-
+<p>
+  <%= link_to "<-Back to Faction Information", faction_path(@faction) %>
+</p>

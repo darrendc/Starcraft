@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if logged_in?
-      # do nothing, we are good!
     else
       redirect_to new_session_path
     end

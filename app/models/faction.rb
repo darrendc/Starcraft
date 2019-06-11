@@ -2,5 +2,6 @@
 
 class Faction < ApplicationRecord
   has_many :characters
+  has_many :planets
   has_many :players, through: :characters
 end

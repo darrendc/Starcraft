@@ -1,0 +1,8 @@
+Search Player Name:
+  <%= form_for @player, url: players_search_path do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Search" %>
+<% end %>
+<p>
+  <%= link_to "<- Back to your dashboard", player_path(@current_player) %>
+</p>

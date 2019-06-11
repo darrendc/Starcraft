@@ -4,26 +4,35 @@ Add notes below each checkbox with how your application has met the requirement
 
 Requirements:
 - [x] Uses Ruby on Rails
+    -ruby "2.5.1"
+    -gem "rails", "~> 5.2.3"
 - [x] Includes at least one has_many relationship (e.g. User has_many Recipes)
-  - Faction has many planets
+    -Faction has_many Planets,
+    -Player has_many Characters
+    -Faction has_many Characters
 - [x] Includes at least one belongs_to relationship (e.g. Post belongs_to User)
-  -Planet belongs to a faction
+    -Planet belongs_to Faction
+    -Character belongs_to Player
+    -Character belongs_to Faction
 - [x] Includes at least one has_many through relationship (e.g. Recipe has_many Items through Ingredients)
-  - A player has many faction through: characters
+    -Player has_many Factions, through: Characters
+    -Faction has_many Players, through: Characters
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (e.g. ingredient#quantity)
-  -characters#name
+    -characters#name: A player can create a character by submitting a name and selecting a faction from a dropdown menu(character#faction_id)
 - [ ] Includes reasonable validations for simple model objects
-- [ ] Includes a class level ActiveRecord scope method
+- [x] Includes a class level ActiveRecord scope method
+    -player#search: Player can search database for a Player's names and view their show page if the name exists
 - [x] Includes signup (e.g. Devise)
+    -
 - [x] Includes login (e.g. Devise)
   -
 - [x] Includes logout (e.g. Devise)
-- [ ] Includes nested resource show or index (e.g. users/2/recipes)
-- [ ] Includes nested resource "new" form (recipes/1/ingredients/new)
+- [x] Includes nested resource show or index (e.g. users/2/recipes)
+- [x] Includes nested resource "new" form (recipes/1/ingredients/new)
 - [ ] Includes form display of validation errors
 - [ ] Includes Unit tests for at least 2 of your models
 - [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
-- [ ] Includes a `README.md` with an application description and installation guide
+- [x] Includes a `README.md` with an application description and installation guide
 
 Confirm:
 - [ ] The application is pretty DRY
