@@ -23,13 +23,15 @@ Requirements:
 - [x] Includes a class level ActiveRecord scope method
     -player#search: Player can search database for a Player's names and view their show page if the name exists
 - [x] Includes signup (e.g. Devise)
-    -gem "bcrypt", "~> 3.1.7". players_controller#create.
+    -gem "bcrypt", "~> 3.1.7". players_controller#create. Player model has_secure_password
 - [x] Includes login (e.g. Devise)
     -gem "bcrypt", "~> 3.1.7". sessions_controller#create.
 - [x] Includes logout (e.g. Devise)
     -sessions_controller#destroy: session.delete :player_id and redirect to root page.
 - [x] Includes nested resource show or index (e.g. users/2/recipes)
+    -URL: factions/5/planets/14 Planets show page. Planet is under faction control. (factions/faction_id/planets/planet id
 - [x] Includes nested resource "new" form (recipes/1/ingredients/new)
+    -URL: factions/5/planets/new Planets new page. Create new planet.
 - [ ] Includes form display of validation errors
 - [ ] Includes Unit tests for at least 2 of your models
 - [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
