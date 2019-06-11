@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CharactersController < ApplicationController
-  before_action :authorize, only: %i[new create]
+  before_action :authorize, only: [:new, :create]
   def new
     @character = Character.new
     @player = current_player

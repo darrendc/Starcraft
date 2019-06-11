@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlanetsController < ApplicationController
-  before_action :authorize, only: %i[new create show]
+  before_action :authorize, only: [:new, :create, :show]
   def new
     @planet = Planet.new
     @faction = Faction.find(params[:faction_id])

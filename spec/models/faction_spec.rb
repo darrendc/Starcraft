@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Faction, type: :model do
-
   describe "is not valid" do
     it "without a name" do
       faction = build(:faction, name: nil)

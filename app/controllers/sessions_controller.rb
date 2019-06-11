@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  before_action :authorize, only: %i[destroy]
+  before_action :authorize, only: [:destroy]
   def new
     @player = Player.new
   end

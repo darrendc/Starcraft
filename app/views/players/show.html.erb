@@ -6,7 +6,7 @@
   <%= link_to "Logout", session_path, method: :delete %>
 </p>
 <p>
-  <%= link_to "Search for player", players_path %>
+  <%= link_to "Search For Player", players_path %>
 </p>
 <% if @can_create_hero %>
   <%= link_to "Create New Hero", new_character_path %>
@@ -14,7 +14,7 @@
 
 <p>
   <u>
-    <%= @player.name %>'s Hero(s) list:
+    <%= @player.name %>'s Hero(es) list:
   </u>
 </p>
 <% @player.characters.each do |char| %>
