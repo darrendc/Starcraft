@@ -33,7 +33,8 @@ Requirements:
     -URL: factions/5/planets/14 Planets show page. Planet is under faction control. (factions/faction_id/planets/planet id
 - [x] Includes nested resource "new" form (recipes/1/ingredients/new)
     -URL: factions/5/planets/new Planets new page. Create new planet.
-- [ ] Includes form display of validation errors
+- [x] Includes form display of validation errors
+    -
 - [ ] Includes Unit tests for at least 2 of your models
 - [x] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
 - [x] Includes a `README.md` with an application description and installation guide
