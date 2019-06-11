@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlayersController < ApplicationController
-  before_action :authorize, only: [:index, :show]
+  before_action :authorize, only: %i[index show]
 
   def new
     @player = Player.new
@@ -27,15 +27,11 @@ class PlayersController < ApplicationController
     end
   end
 
-   def create # Signup
+  # Signup
+  def create
     if params[:password] == params[:password_confirmation]
       @player = Player.new(player_params)
-      if @player.save
-        session[:player_id] = @player.id
-        redirect_to player_path(@player)
-      else
-        redirect_to new_player_path
-      end
+      signup
     else
       redirect_to new_player_path
     end

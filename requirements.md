@@ -19,7 +19,8 @@ Requirements:
     -Faction has_many Players, through: Characters
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (e.g. ingredient#quantity)
     -characters#name: A player can create a character by submitting a name and selecting a faction from a dropdown menu(character#faction_id)
-- [ ] Includes reasonable validations for simple model objects
+- [x] Includes reasonable validations for simple model objects
+    -character, faction, planet, player models
 - [x] Includes a class level ActiveRecord scope method
     -player#search: Player can search database for a Player's names and view their show page if the name exists
 - [x] Includes signup (e.g. Devise)

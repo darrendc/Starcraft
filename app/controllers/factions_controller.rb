@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class FactionsController < ApplicationController
-
   def new
     @faction = Faction.new
   end
@@ -15,4 +14,3 @@ class FactionsController < ApplicationController
     @player = current_player
   end
 end
-

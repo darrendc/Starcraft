@@ -17,4 +17,13 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+
+  def signup
+    if @player.save
+      session[:player_id] = @player.id
+      redirect_to player_path(@player)
+    else
+      redirect_to new_player_path
+    end
+  end
 end

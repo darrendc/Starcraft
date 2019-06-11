@@ -1,5 +1,6 @@
-class PlanetsController < ApplicationController
+# frozen_string_literal: true
 
+class PlanetsController < ApplicationController
   def new
     @planet = Planet.new
     @faction = Faction.find(params[:faction_id])
@@ -24,6 +25,6 @@ private
     params.require(:planet).permit(
       :name,
       :faction_id
-      )
+    )
   end
 end
