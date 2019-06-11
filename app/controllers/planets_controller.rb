@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PlanetsController < ApplicationController
+  before_action :authorize, only: %i[new create show]
   def new
     @planet = Planet.new
     @faction = Faction.find(params[:faction_id])
@@ -10,8 +11,12 @@ class PlanetsController < ApplicationController
     planet = Planet.create(planet_params)
     faction = Faction.find(params[:faction_id])
     planet.faction = faction
-    planet.save
-    redirect_to faction_planet_path(faction, planet)
+    if planet.save
+      redirect_to faction_planet_path(faction, planet)
+    else
+      flash[:error] = "Invalid Planet Name"
+      redirect_to new_faction_planet_path
+    end
   end
 
   def show

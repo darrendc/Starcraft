@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CharactersController < ApplicationController
+  before_action :authorize, only: %i[new create]
   def new
     @character = Character.new
     @player = current_player
@@ -13,6 +14,7 @@ class CharactersController < ApplicationController
     if character.save
       redirect_to player_path(character.player)
     else
+      flash[:error] = "Invalid character data"
       redirect_to "/characters/new"
     end
   end

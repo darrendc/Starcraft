@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlayersController < ApplicationController
-  before_action :authorize, only: %i[index show]
+  before_action :authorize, only: %i[index show search]
 
   def new
     @player = Player.new
@@ -24,6 +24,7 @@ class PlayersController < ApplicationController
     if @player
       redirect_to player_path(@player.id)
     else
+      flash[:error] = "Player Not Found"
       redirect_to players_path
     end
   end
