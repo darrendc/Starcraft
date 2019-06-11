@@ -7,7 +7,7 @@ This is a Ruby app using the [Rails](http://rubyonrails.org) framework.
 This app generates a simple player dashboard based on the popular video game by Blizzard Entertainment, Starcraft.
 A player creates a profile consisting of an Account Name and Password which grants them access to their dynamic player dashboard.
 
-Once logged in, a player can generate Hero's consisting of a name and one of Starcraft's three factions (Terran / Protoss / Zerg).
+Once logged in, a player can generate Heroes consisting of a name and one of Starcraft's three factions (Terran / Protoss / Zerg).
 A player's heroes will populate their dashboard upon creation and can be viewed for a description of their faction.
 A player can also create planets for faction colonization and control.
 
