@@ -34,15 +34,16 @@ Requirements:
 - [x] Includes nested resource "new" form (recipes/1/ingredients/new)
     -URL: factions/5/planets/new Planets new page. Create new planet.
 - [x] Includes form display of validation errors
-    -
-- [ ] Includes Unit tests for at least 2 of your models
+    -Error messages/validations for login, logout, create character, create planet and player search
+- [x] Includes Unit tests for at least 2 of your models
+    -Unit tests for Player (name/password present. scope method player search test) and Faction(name/description present) models
 - [x] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
 - [x] Includes a `README.md` with an application description and installation guide
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate
 
 If you've added any additional functionality to your application that you'd like to demonstrate, please describe it below:

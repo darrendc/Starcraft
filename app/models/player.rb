@@ -2,6 +2,7 @@
 
 class Player < ApplicationRecord
   validates :name, presence: true, uniqueness: true
+  validates :password_digest, presence: true
   has_many :characters
   has_many :factions, through: :characters
   has_secure_password
