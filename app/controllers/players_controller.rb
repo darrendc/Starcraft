@@ -18,6 +18,7 @@ class PlayersController < ApplicationController
     @can_create_hero = can_create_hero?(@player)
   end
 
+  # Player Search
   def search
     @player = Player.search(params[:player][:name]).first
     if @player
@@ -45,5 +46,15 @@ private
 
   def player_params
     params.require(:player).permit(:name, :password, :password_confirmation)
+  end
+
+  def signup
+    if @player.save
+      session[:player_id] = @player.id
+      redirect_to player_path(@player)
+    else
+      flash[:error] = @player.errors.full_messages
+      redirect_to new_player_path
+    end
   end
 end

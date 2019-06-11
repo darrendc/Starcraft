@@ -22,7 +22,7 @@ Requirements:
 - [x] Includes reasonable validations for simple model objects
     -character, faction, planet, player models
 - [x] Includes a class level ActiveRecord scope method
-    -player#search: Player can search database for a Player's names and view their show page if the name exists
+    -player#search: Player can search database for a Player's names and view their show page if the name exists. form in players index view
 - [x] Includes signup (e.g. Devise)
     -gem "bcrypt", "~> 3.1.7". players_controller#create. Player model has_secure_password
 - [x] Includes login (e.g. Devise)
