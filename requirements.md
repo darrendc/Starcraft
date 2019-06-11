@@ -35,7 +35,7 @@ Requirements:
     -URL: factions/5/planets/new Planets new page. Create new planet.
 - [ ] Includes form display of validation errors
 - [ ] Includes Unit tests for at least 2 of your models
-- [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
+- [x] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
 - [x] Includes a `README.md` with an application description and installation guide
 
 Confirm:
