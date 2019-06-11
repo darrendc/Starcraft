@@ -23,10 +23,11 @@ Requirements:
 - [x] Includes a class level ActiveRecord scope method
     -player#search: Player can search database for a Player's names and view their show page if the name exists
 - [x] Includes signup (e.g. Devise)
-    -
+    -gem "bcrypt", "~> 3.1.7". players_controller#create.
 - [x] Includes login (e.g. Devise)
-  -
+    -gem "bcrypt", "~> 3.1.7". sessions_controller#create.
 - [x] Includes logout (e.g. Devise)
+    -sessions_controller#destroy: session.delete :player_id and redirect to root page.
 - [x] Includes nested resource show or index (e.g. users/2/recipes)
 - [x] Includes nested resource "new" form (recipes/1/ingredients/new)
 - [ ] Includes form display of validation errors

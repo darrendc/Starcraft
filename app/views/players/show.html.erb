@@ -1,15 +1,16 @@
-<h1>Player Dashboard for <%= @player.name %></h1>
+<h1>
+  Player Dashboard for <%= @player.name %>
+</h1>
 
 <p>
   <%= link_to "Logout", session_path, method: :delete %>
-  </p>
-
-<p><%= link_to "Search for player", players_path %></p>
-
+</p>
+<p>
+  <%= link_to "Search for player", players_path %>
+</p>
 <% if @can_create_hero %>
   <%= link_to "Create New Hero", new_character_path %>
 <% end %>
-
 
 <p>
   <u>

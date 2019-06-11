@@ -1,12 +1,17 @@
-<h1>Faction Information</h1>
-<u>
-  <h2>
+<h1>
+  Faction Information
+</h1>
+
+<h2>
+  <u>
     <%= @faction.name %>
-  </h2>
-</u>
+  </u>
+</h2>
+
 <h3>
   <%= @faction.description %>
 </h3>
+
 <p>
   <%= link_to "Logout", session_path, method: :delete %>
 </p>
