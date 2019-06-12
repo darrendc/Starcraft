@@ -6,13 +6,13 @@
   <%= f.label :name %>:
   <%= f.text_field :name %>
   <p>
-  Select Faction:
+    Select Faction:
   </p>
   <%= f.collection_select(:faction_id, Faction.all, :id, :name, include_blank: true) %>
   <%= f.submit "Create Hero" %>
 <% end %>
 </br>
-<%= link_to "<- Back to Dashboard", player_path(@player) %>
+<%= link_to "<- Back to #{@player.name}'s Dashboard", player_path(@player) %>
 </br>
 
 
