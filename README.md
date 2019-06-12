@@ -21,6 +21,8 @@ Make sure you have [Ruby](https://www.ruby-lang.org) and [Bundler](http://bundle
 git clone git@github.com:darrendc/Starcraft.git # or clone your own fork
 cd Starcraft
 bundle install
+rake db:migrate
+rake db:seed
 ```
 
 Start a rails server from the applications's root directory:

@@ -47,3 +47,5 @@ Confirm:
 - [x] Views use partials if appropriate
 
 If you've added any additional functionality to your application that you'd like to demonstrate, please describe it below:
+- Player search scope method
+- ApplicationController#authenticate before_action
