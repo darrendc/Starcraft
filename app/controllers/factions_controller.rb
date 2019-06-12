@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FactionsController < ApplicationController
-  before_action :authorize, only: [:index, :show]
+  before_action :authorize, only: %i[index show]
   def new
     @faction = Faction.new
   end

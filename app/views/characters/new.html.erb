@@ -1,5 +1,5 @@
 <h1>
-  Create a Character
+  Create a Hero
 </h1>
 
 <%= form_for @character do |f| %>
@@ -9,10 +9,10 @@
   Select Faction:
   </p>
   <%= f.collection_select(:faction_id, Faction.all, :id, :name, include_blank: true) %>
-  <%= f.submit "Create Character" %>
+  <%= f.submit "Create Hero" %>
 <% end %>
 <br>
-<%= link_to "<- Back to Player Dashboard", player_path(@player) %>
+<%= link_to "<- Back to Dashboard", player_path(@player) %>
 </br>
 
 

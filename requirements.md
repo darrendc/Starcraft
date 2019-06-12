@@ -7,7 +7,7 @@ Requirements:
     -ruby "2.5.1"
     -gem "rails", "~> 5.2.3"
 - [x] Includes at least one has_many relationship (e.g. User has_many Recipes)
-    -Faction has_many Planets,
+    -Faction has_many Planets
     -Player has_many Characters
     -Faction has_many Characters
 - [x] Includes at least one belongs_to relationship (e.g. Post belongs_to User)
@@ -18,11 +18,11 @@ Requirements:
     -Player has_many Factions, through: Characters
     -Faction has_many Players, through: Characters
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (e.g. ingredient#quantity)
-    -characters#name: A player can create a character by submitting a name and selecting a faction from a dropdown menu(character#faction_id)
+    -character#name: A player can create a character by submitting a name and selecting a faction from a dropdown menu(characters faction_id)
 - [x] Includes reasonable validations for simple model objects
     -character, faction, planet, player models
 - [x] Includes a class level ActiveRecord scope method
-    -player#search: Player can search database for a Player's names and view their show page if the name exists. form in players index view
+    -PlayersController#search: Player can search database for a Player's names and view their show page if the name exists. form in players index view
 - [x] Includes signup (e.g. Devise)
     -gem "bcrypt", "~> 3.1.7". players_controller#create. Player model has_secure_password
 - [x] Includes login (e.g. Devise)
@@ -30,7 +30,7 @@ Requirements:
 - [x] Includes logout (e.g. Devise)
     -sessions_controller#destroy: session.delete :player_id and redirect to root page.
 - [x] Includes nested resource show or index (e.g. users/2/recipes)
-    -URL: factions/5/planets/14 Planets show page. Planet is under faction control. (factions/faction_id/planets/planet id
+    -URL: factions/5/planets/14 Planets show page. Creating a planet sends the user to planet show page. (factions/faction_id/planets/planet id
 - [x] Includes nested resource "new" form (recipes/1/ingredients/new)
     -URL: factions/5/planets/new Planets new page. Create new planet.
 - [x] Includes form display of validation errors

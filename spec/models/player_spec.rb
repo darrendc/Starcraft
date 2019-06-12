@@ -12,6 +12,7 @@ RSpec.describe Player, type: :model do
       expect(player).to_not be_valid
     end
   end
+
   describe "#search" do
     it "Finds a player if name matches" do
       player = create(:player, name: "ThunderGod")
@@ -19,6 +20,7 @@ RSpec.describe Player, type: :model do
       expect(results.length).to eq(1)
       expect(results.first.name).to eq("ThunderGod")
     end
+
     it "Does not find a player if name does not match" do
       player = create(:player, name: "ThunderGod")
       results = Player.search("ThunderGoo")
