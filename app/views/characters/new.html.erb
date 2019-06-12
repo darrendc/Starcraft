@@ -11,7 +11,7 @@
   <%= f.collection_select(:faction_id, Faction.all, :id, :name, include_blank: true) %>
   <%= f.submit "Create Hero" %>
 <% end %>
-<br>
+</br>
 <%= link_to "<- Back to Dashboard", player_path(@player) %>
 </br>
 

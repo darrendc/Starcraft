@@ -19,7 +19,12 @@
 </p>
 <% @player.characters.each do |char| %>
   <p>
-    Name: <%= char.name %></br>
-    Faction: <%= link_to char.faction.name, faction_path(char.faction) %>
+    Name: <%= char.name %>
+    </br>
+    <% if @can_create_hero %>
+      Faction: <%= link_to char.faction.name, faction_path(char.faction) %>
+    <% else %>
+      <%= char.faction.name %>
+    <% end %>
   </p>
 <% end %>
