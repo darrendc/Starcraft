@@ -13,6 +13,7 @@ class PlayersController < ApplicationController
     @current_player = current_player
   end
 
+  # Player Dashboard
   def show
     @player = Player.find(params[:id])
     @can_create_hero = can_create_hero?(@player)
