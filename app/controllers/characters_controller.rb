@@ -14,7 +14,7 @@ class CharactersController < ApplicationController
     if character.save
       redirect_to player_path(character.player)
     else
-      flash[:error] = "Invalid character data"
+      flash[:error] = character.errors.full_messages
       redirect_to "/characters/new"
     end
   end

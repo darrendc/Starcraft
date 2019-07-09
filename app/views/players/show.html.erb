@@ -1,28 +1,31 @@
+<pre>
+    ____             __    __                         __
+   / __ \____ ______/ /_  / /_  ____  ____ __________/ /
+  / / / / __ `/ ___/ __ \/ __ \/ __ \/ __ `/ ___/ __  /
+ / /_/ / /_/ (__  ) / / / /_/ / /_/ / /_/ / /  / /_/ /
+/_____/\__,_/____/_/ /_/_.___/\____/\__,_/_/   \__,_/
+</pre>
+<%= link_to "Logout", session_path, method: :delete %>
 <h1>
-  Player Dashboard for <%= @player.name %>
+  <%= @player.name %>
 </h1>
-
-<p>
-  <%= link_to "Logout", session_path, method: :delete %>
-</p>
 <p>
   <%= link_to "Search For Player", players_path %>
 </p>
 <% if @can_create_hero %>
   <%= link_to "Create New Hero", new_character_path %>
 <% end %>
-
-<p>
+<h3>
   <u>
-    <%= @player.name %>'s Hero(es) list:
+    <%= @player.name %>'s Hero List:
   </u>
-</p>
+</h3>
 <% @player.characters.each do |char| %>
   <p>
-    Name: <%= char.name %>
+    <b>Name</b>: <%= char.name %>
     </br>
     <% if @can_create_hero %>
-      Faction: <%= link_to char.faction.name, faction_path(char.faction) %>
+      <b>Faction</b>: <%= link_to char.faction.name, faction_path(char.faction) %>
     <% else %>
       <%= char.faction.name %>
     <% end %>

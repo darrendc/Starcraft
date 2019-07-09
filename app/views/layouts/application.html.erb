@@ -11,7 +11,16 @@
 
   <body>
     <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
+      <div class="alert alert-<%= key %>">
+        <% if value.respond_to?(:each) %>
+          <% value.each do |line| %>
+            <%= line %>
+            <br />
+          <% end %>
+        <% else %>
+          <%= value %>
+        <% end %>
+      </div>
     <% end %>
 
     <%= yield %>
