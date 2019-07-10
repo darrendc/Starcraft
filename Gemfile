@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.1"
 
+gem "jquery-rails"
 gem "bcrypt", "~> 3.1.7"
 # Password authentication
 gem "rubocop"
