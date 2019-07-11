@@ -3,17 +3,17 @@
 Specs:
 - [ ] Uses jQuery for implementing new requirements
 
-- [ ] Includes a show resource rendered using jQuery and JSON backend.
-    * from factions show page, render info from planets show page
+- [ ] Includes a index/list resource rendered using jQuery and JSON backend.
+    * from factions show page, render all its planets
 
-- [ ] Includes an index resource rendered using jQuery and JSON backend.
-    * from players show page, render players index page
+- [ ] Includes an show/item resource rendered using jQuery and JSON backend.
+    * from players search page, use AJAX to render the collected player
 
 - [ ] Includes at least one has_many relationship in information rendered via JSON and appended to the DOM.
     * from factions show page, render all characters (Faction has_many characters)
 
 - [ ] Uses your Rails API and a form to create a resource and render the response without a page refresh.
-   create new hero form on players show page.
+   * create new hero form on players show page.
 
 - [ ] Translates JSON responses into js model objects.
 

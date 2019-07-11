@@ -10,7 +10,9 @@
 <h3>
   <%= @faction.description %>
 </h3>
-
+<p id="all-planets">
+  Show planets under <%= @faction.name %> control
+</p>
 <p>
   <%= link_to "Logout", session_path, method: :delete %>
 </p>

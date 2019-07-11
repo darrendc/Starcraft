@@ -1,10 +1,18 @@
 # frozen_string_literal: true
 
 class PlanetsController < ApplicationController
-  before_action :authorize, only: %i[new create show]
+  before_action :authorize, only: %i[new index create show]
   def new
     @planet = Planet.new
     @faction = Faction.find(params[:faction_id])
+  end
+
+  def index
+    @planets = Planet.all
+    @planet_name = @planets.find(params[:faction_id]).name
+    # Make sure it is a json request (RUBY: request.format )
+    # Make sure we are "render_to" a json format
+    binding.pry
   end
 
   def create
