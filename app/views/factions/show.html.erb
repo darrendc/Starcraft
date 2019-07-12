@@ -10,14 +10,12 @@
 <h3>
   <%= @faction.description %>
 </h3>
-<!-- <button id="all-planets">
-  Show planets under <%= @faction.name %> control
-</button> -->
 
 <%= form_for @faction do |f| %>
   <%= f.hidden_field :id %>
-  <%= f.submit "Faction Planets" %>
+  <%= f.submit "#{@faction.name} Planets" %>
 <% end %>
+</br>
 
 <div class="result"></div>
 

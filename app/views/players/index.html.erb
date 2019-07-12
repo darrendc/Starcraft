@@ -12,22 +12,18 @@
 </p>
 
 <script>
-  $( document ).on('turbolinks:load', function() {
-    $('.new_player').click(function(e) {
-      e.preventDefault()
-      let name = $("#player_name").val()
-      $.post( "/players/search/" + name + ".html", function( data ) {
+  $(document).on('turbolinks:load', function() {
+    $('.new_player').submit(function(event) {
+      event.preventDefault()
+      const name = $("#player_name").val()
+      $.post(`/players/search/${name}`, function(data) {
       if (data) {
-        let name = "<li>" + data.name + "</li>"
-        let characters = data.characters.map(({name}) => ("<li>" + name + "</li>"))
-        let factions = data.factions.map(({name}) => ("<li>" + name + "</li>"))
-        let payload = [name, characters, factions].flat().join("")
-        $(".result").html(payload)
+        const player = new Player(data.name, data.characters)
+        $(".result").html(player.playerEl())
       } else {
         $(".result").html("No player found.")
       }
-    });
+    })
   })
 })
-
 </script>

@@ -24,9 +24,17 @@ class PlayersController < ApplicationController
     player = Player.find_by(name: params[:name])
     render(
       json: player.to_json(
-        include: [:factions, :characters]
-        )
+        include: {
+          characters: {
+            include: {
+              faction: { only: :name }
+            },
+            only: :name
+          }
+        },
+        except: :password_digest
       )
+    )
   end
 
   # Signup
