@@ -21,13 +21,12 @@ class PlayersController < ApplicationController
 
   # Player Search
   def search
-    @player = Player.search(params[:player][:name]).first
-    if @player
-      redirect_to player_path(@player.id)
-    else
-      flash[:error] = "Player Not Found"
-      redirect_to players_path
-    end
+    player = Player.find_by(name: params[:name])
+    render(
+      json: player.to_json(
+        include: [:factions, :characters]
+        )
+      )
   end
 
   # Signup

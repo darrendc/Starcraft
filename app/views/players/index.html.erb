@@ -1,10 +1,33 @@
 <h1>
   Search Player Name:
 </h1>
-<%= form_for @player, url: players_search_path do |f| %>
+<%= form_for @player do |f| %>
   <%= f.text_field :name %>
   <%= f.submit "Search" %>
 <% end %>
+
+<div class="result"></div>
 <p>
   <%= link_to "<- Back to #{@current_player.name}'s Dashboard", player_path(@current_player) %>
 </p>
+
+<script>
+  $( document ).on('turbolinks:load', function() {
+    $('.new_player').click(function(e) {
+      e.preventDefault()
+      let name = $("#player_name").val()
+      $.post( "/players/search/" + name + ".html", function( data ) {
+      if (data) {
+        let name = "<li>" + data.name + "</li>"
+        let characters = data.characters.map(({name}) => ("<li>" + name + "</li>"))
+        let factions = data.factions.map(({name}) => ("<li>" + name + "</li>"))
+        let payload = [name, characters, factions].flat().join("")
+        $(".result").html(payload)
+      } else {
+        $(".result").html("No player found.")
+      }
+    });
+  })
+})
+
+</script>

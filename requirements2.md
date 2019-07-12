@@ -1,13 +1,13 @@
 # Specifications for the Rails with jQuery Assessment
 
 Specs:
-- [ ] Uses jQuery for implementing new requirements
+- [x] Uses jQuery for implementing new requirements
 
-- [ ] Includes a index/list resource rendered using jQuery and JSON backend.
-    * from factions show page, render all its planets
+- [x] Includes a index/list resource rendered using jQuery and JSON backend.
+    * from factions show page, render all its planets (for that faction)
 
 - [ ] Includes an show/item resource rendered using jQuery and JSON backend.
-    * from players search page, use AJAX to render the collected player
+    * from players search page, use AJAX to render the searched player
 
 - [ ] Includes at least one has_many relationship in information rendered via JSON and appended to the DOM.
     * from factions show page, render all characters (Faction has_many characters)
