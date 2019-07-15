@@ -12,9 +12,7 @@
 <p>
   <%= link_to "Search For Player", players_path %>
 </p>
-<% if @can_create_hero %>
-  <%= link_to "Create New Hero", new_character_path %>
-<% end %>
+
 <h3>
   <u>
     <%= @player.name %>'s Hero List:
@@ -24,10 +22,19 @@
   <p>
     <b>Name</b>: <%= char.name %>
     </br>
-    <% if @can_create_hero %>
-      <b>Faction</b>: <%= link_to char.faction.name, faction_path(char.faction) %>
-    <% else %>
-      <%= char.faction.name %>
-    <% end %>
+    <b>Faction</b>: <%= link_to char.faction.name, faction_path(char.faction) %>
   </p>
+<% end %>
+
+<h3>
+  Create New Hero
+</h3>
+<%= form_for @player.characters.new do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+  <p>
+    Select Faction:
+  </p>
+  <%= f.collection_select(:faction_id, Faction.all, :id, :name, include_blank: true) %>
+  <%= f.submit "Create Hero" %>
 <% end %>

@@ -7,13 +7,13 @@ Specs:
     * from factions show page, render all its planets (for that faction)
 
 - [x] Includes an show/item resource rendered using jQuery and JSON backend.
-    * from players search page, use AJAX to render the searched player with their characters and corresponding faction
+    * from players search page, use AJAX to render the searched player (with their characters and corresponding faction)
 
 - [x] Includes at least one has_many relationship in information rendered via JSON and appended to the DOM.
-    * from factions show page, render all characters (Faction has_many characters)
+    * from factions show page, render all planets (Faction has_many planets)
 
 - [ ] Uses your Rails API and a form to create a resource and render the response without a page refresh.
-   * create new hero form on players show page.
+   *
 
 - [ ] Translates JSON responses into js model objects.
 
