@@ -16,6 +16,7 @@
     $('.new_player').submit(function(event) {
       event.preventDefault()
       const name = $("#player_name").val()
+
       $.post(`/players/search/${name}`, function(data) {
       if (data) {
         const player = new Player(data.name, data.characters)

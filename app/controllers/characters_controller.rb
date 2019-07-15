@@ -9,13 +9,15 @@ class CharactersController < ApplicationController
 
   # create character
   def create
-    character = Character.new(character_params)
+    name = params[:character][:name]
+    faction_id = params[:character][:faction_id]
+    character = Character.new(name: name, faction_id: faction_id)
     character.player_id = session[:player_id]
-    if character.save
-      redirect_to player_path(character.player)
-    else
-      flash[:error] = character.errors.full_messages
-      redirect_to "/characters/new"
+    character.save!
+    respond_to do |format|
+      format.json do
+        render :json => character.to_json(:include => { :faction => { :only => :name } })
+      end
     end
   end
 

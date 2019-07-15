@@ -13,14 +13,4 @@ class Character {
       `<li><b>Character:</b> ${this.name} / <b>Faction:</b> ${this.faction}</li>`
     )
   }
-
-  characterElWithLink() {
-    return (
-      `<p>
-        <b>Name</b>: ${this.name}
-      </br>
-        <b>Faction</b>: ${this.faction.name}
-      </p>`
-    )
-  }
 }

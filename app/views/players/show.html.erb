@@ -19,13 +19,15 @@
   </u>
 </h3>
 <% @player.characters.each do |char| %>
-  <p>
-    <b>Name</b>: <%= char.name %>
-    </br>
-    <b>Faction</b>: <%= link_to char.faction.name, faction_path(char.faction) %>
-  </p>
-<% end %>
 
+    <p>
+      <b>Name</b>: <%= char.name %>
+      </br>
+      <b>Faction</b>: <%= link_to char.faction.name, faction_path(char.faction) %>
+    </p>
+<% end %>
+  <div id="character_list">
+  </div>
 <h3>
   Create New Hero
 </h3>
