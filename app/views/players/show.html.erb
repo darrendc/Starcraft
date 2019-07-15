@@ -38,3 +38,6 @@
   <%= f.collection_select(:faction_id, Faction.all, :id, :name, include_blank: true) %>
   <%= f.submit "Create Hero" %>
 <% end %>
+<script>
+  addCharacterFormListener()
+</script>

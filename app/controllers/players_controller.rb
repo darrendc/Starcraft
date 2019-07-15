@@ -16,7 +16,7 @@ class PlayersController < ApplicationController
   # Player Dashboard
   def show
     @player = Player.find(params[:id])
-    @can_create_hero = can_create_hero?(@player)
+    # @can_create_hero = can_create_hero?(@player)
   end
 
   # Player Search
@@ -49,9 +49,9 @@ class PlayersController < ApplicationController
 
 private
 
-  def can_create_hero?(player)
-    Player.find_by(id: session[:player_id]) == player
-  end
+  # def can_create_hero?(player)
+  #   Player.find_by(id: session[:player_id]) == player
+  # end
 
   def player_params
     params.require(:player).permit(:name, :password, :password_confirmation)
