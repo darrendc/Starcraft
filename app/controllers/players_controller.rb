@@ -27,14 +27,28 @@ class PlayersController < ApplicationController
         include: {
           characters: {
             include: {
-              faction: { only: :name }
+              faction: { only: :name },
             },
-            only: :name
-          }
+            only: :name,
+          },
         },
         except: :password_digest
       )
     )
+
+    # render(
+    #   json: player.to_json(
+    #     include: {
+    #       characters: {
+    #         include: {
+    #           faction: { only: :name },
+    #         },
+    #         only: :name,
+    #       },
+    #     },
+    #     except: :password_digest
+    #   )
+    # )
   end
 
   # Signup
