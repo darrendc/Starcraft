@@ -16,7 +16,7 @@ class CharactersController < ApplicationController
     character.save!
     respond_to do |format|
       format.json do
-        render :json => character.to_json(:include => { :faction => { :only => :name } })
+        render json: character.to_json(include: { faction: { only: :name } })
       end
     end
   end

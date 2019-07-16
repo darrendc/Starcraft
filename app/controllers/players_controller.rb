@@ -21,8 +21,7 @@ class PlayersController < ApplicationController
 
   # Player Search
   def search
-    player = Player.where(name: params[:name])
-    debugger
+    player = Player.find_by(name: params[:name])
     render(
       json: player.to_json(
         include: {

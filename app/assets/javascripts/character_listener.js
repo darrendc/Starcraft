@@ -12,13 +12,13 @@ function addCharacterFormListener() {
       success: function(data) {
         let faction_name = data.faction.name
         let list = $('#character_list')
-        let characterEl =
+        let template =
           `<p>
           <b>Name</b>: ${name}
           </br>
           <b>Faction</b>: <a href='/factions/${faction_id}'>${faction_name}</a>`
 
-      list.append(characterEl)
+      list.append(template)
       }
     })
   })
