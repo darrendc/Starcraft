@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function() {
     event.preventDefault()
     showPlanets = !showPlanets
     if (showPlanets) {
-      $.get( `/factions/${id}/planets.html`, function(data) {
+      $.get( `/factions/${id}/planets`, function(data) {
       let names = data.map(({name}) => (`<li>${name}</li>`))
       $(".result").append(names)
     })
@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function() {
   })
 })
 
-    // Make sure it is a json request (RUBY: request.format )
-    // Make sure we are "render_to" a json format
+    // Make sure it is a json request
+    // json format
     // Console.log your response in the frontend promise
     // Finally start using the assessment as an example (Display by creating a new Planet(attributes from response), )

@@ -69,7 +69,6 @@ If you've added any additional functionality to your application that you'd like
 
 // $(function() {
 //   const $planets = $("#all-planets")
-//   debugger
 //   const factionId =
 //   $planets.on("click", function(event) {
 //     console.log(this)
