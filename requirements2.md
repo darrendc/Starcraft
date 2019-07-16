@@ -12,14 +12,14 @@ Specs:
 - [x] Includes at least one has_many relationship in information rendered via JSON and appended to the DOM.
     * from factions show page, render all planets (Faction has_many planets)
 
-- [ ] Uses your Rails API and a form to create a resource and render the response without a page refresh.
-   *
+- [x] Uses your Rails API and a form to create a resource and render the response without a page refresh.
+   * from players show page, appends a new character (with name and faction) to a players character collection
 
-- [ ] Translates JSON responses into js model objects.
+- [x] Translates JSON responses into js model objects.
 
-- [ ] A js model object has at least one function added to the prototype.
+- [x] A js model object has at least one function added to the prototype.
 
-- [ ] Contains at least 4 model specs, 2 request specs and one system test that reasonably tests your public api.
+- [ ] xContains at least 4 model specs, 2 request specs and one system test that reasonably tests your public api.
 
 Confirm
 - [ ] You have a large number of small Git commits
