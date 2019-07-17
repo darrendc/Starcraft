@@ -9,6 +9,7 @@ function addCharacterFormListener() {
       url: this.action,
       type: "POST",
       data: {character: { name: name, faction_id: faction_id}},
+      dataType: "json",
       success: function(data) {
         let faction_name = data.faction.name
         let $list = $('#character_list')

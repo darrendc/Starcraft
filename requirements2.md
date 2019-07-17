@@ -21,7 +21,7 @@ Specs:
 - [x] A js model object has at least one function added to the prototype.
     * JS Player (name, characters) and Character (player, name, faction) models
 
-- [ ] xContains at least 4 model specs, 2 request specs and one system test that reasonably tests your public api.
+- [x] Contains at least 4 model specs, 2 request specs and one system test that reasonably tests your public api.
 
 Confirm
 - [x] You have a large number of small Git commits
