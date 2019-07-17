@@ -7,7 +7,7 @@ Specs:
     * from factions show page, render all its planets (for that faction)
 
 - [x] Includes an show/item resource rendered using jQuery and JSON backend.
-    * from players search page, use AJAX to render the searched player (with their characters and corresponding faction)
+    * from players search page, render the searched player (with their characters and corresponding faction)
 
 - [x] Includes at least one has_many relationship in information rendered via JSON and appended to the DOM.
     * from factions show page, render all planets (Faction has_many planets)
@@ -22,6 +22,16 @@ Specs:
     * JS Player (name, characters) and Character (player, name, faction) models
 
 - [x] Contains at least 4 model specs, 2 request specs and one system test that reasonably tests your public api.
+    * Model specs:
+        character
+        faction
+        planet
+        player
+      Request specs:
+        character_management
+        planet_management
+      System test:
+        character_system
 
 Confirm
 - [x] You have a large number of small Git commits
