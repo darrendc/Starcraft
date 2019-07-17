@@ -16,26 +16,34 @@ class PlayersController < ApplicationController
   # Player Dashboard
   def show
     @player = Player.find(params[:id])
-    # @can_create_hero = can_create_hero?(@player)
   end
 
   # Player Search
   def search
     player = Player.find_by(name: params[:name])
-    render(
-      json: player.to_json(
-        include: {
-          characters: {
-            include: {
-              faction: { only: :name },
-            },
-            only: :name,
-          },
-        },
-        except: :password_digest
-      )
-    )
+    render(json: player.to_json(include: {
+                                  characters: {
+                                    include: {
+                                      faction: { only: :name },
+                                    },
+                                    only: :name,
+                                  },
+                                },
+                                except: :password_digest))
   end
+  # render(
+  #   json: player.to_json(
+  #     include: {
+  #       characters: {
+  #         include: {
+  #           faction: { only: :name },
+  #         },
+  #         only: :name,
+  #       },
+  #     },
+  #     except: :password_digest
+  #   )
+  # )
 
   # Signup
   def create
@@ -48,10 +56,6 @@ class PlayersController < ApplicationController
   end
 
 private
-
-  # def can_create_hero?(player)
-  #   Player.find_by(id: session[:player_id]) == player
-  # end
 
   def player_params
     params.require(:player).permit(:name, :password, :password_confirmation)
