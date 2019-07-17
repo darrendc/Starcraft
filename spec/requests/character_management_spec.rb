@@ -4,12 +4,13 @@ RSpec.describe "Character management", :type => :request do
 
   it "Posts created character" do
     player = create(:player)
-    character = create(:character)
     faction = create(:faction)
+    # character = create(:character, faction_id: faction.id)
+    character_params = { "character" => {"name" => "Joe", "player_id" => player.id, "faction_id" => faction.id } }
 
     stub_auth
 
-    post("/players/#{player.id}", headers: { "ACCEPT" => "application/json" } )
+    post("/characters", params: character_params, headers: { "ACCEPT" => "application/json" } )
 
     expect(response.content_type).to eq("application/json")
     expect(response).to have_http_status(:success)
