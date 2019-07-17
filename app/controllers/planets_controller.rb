@@ -12,7 +12,6 @@ class PlanetsController < ApplicationController
     @planet_name = @planets.find(params[:faction_id]).name
     faction_planets = Planet.where(faction_id: params[:faction_id])
     render json: faction_planets.to_json
-    # Make sure it is a json request
     # json format
   end
 

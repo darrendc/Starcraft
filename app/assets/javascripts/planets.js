@@ -16,8 +16,3 @@ $(document).on('turbolinks:load', function() {
     }
   })
 })
-
-    // Make sure it is a json request
-    // json format
-    // Console.log your response in the frontend promise
-    // Finally start using the assessment as an example (Display by creating a new Planet(attributes from response), )
