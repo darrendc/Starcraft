@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :planets, only:[:new, :index, :create, :show]
   end
   post 'players/search/:name', to: 'players#search'
+  post 'players/search/', to: 'players#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

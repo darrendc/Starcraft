@@ -14,6 +14,7 @@ class CharactersController < ApplicationController
     character = Character.new(name: name, faction_id: faction_id)
     character.player_id = session[:player_id]
     character.save!
+    # check value of save -> return error
 
     respond_to do |format|
       format.json do
